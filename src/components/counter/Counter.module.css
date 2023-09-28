@@ -1,0 +1,43 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 850px;
+    min-width: 950px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #5B87E6, #5AC6E3);
+}
+
+.counterDisplay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 370px;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 20px 20px 20px;
+    background-color: #343333;
+    color: white;
+    font-size: 120px;
+}
+
+.counterButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 270px;
+    border-radius: 10px;
+    margin: 10px 20px 0px 20px;
+    background-color: #343333;
+}

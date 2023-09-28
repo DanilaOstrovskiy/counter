@@ -6,16 +6,15 @@ import s from "./Counter.module.css"
 
 const Counter = () => {
 
-
     return (
         <div className={s.counter}>
             <div className={s.counterDisplay}>
                 <h1>6</h1>
             </div>
             <div className={s.counterButtons}>
-                <SuperButton/>
-                <SuperButton/>
-                <SuperButton/>
+                <SuperButton value={"inc"}/>
+                <SuperButton value={"reset"}/>
+                <SuperButton value={"set"}/>
             </div>
         </div>
     );

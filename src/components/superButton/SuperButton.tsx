@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {FC} from 'react';
 import s from './SuperButton.module.css'
 
 
-export const SuperButton = () => {
-    const title = "кнопка"
+type SuperButtonPropsType = {
+    value: string
+}
+
+export const SuperButton: FC<SuperButtonPropsType> = ({value}) => {
     return (
-            <button className={s.universalButton}>{title}</button>
+            <button className={s.universalButton}>{value}</button>
     );
 };
 

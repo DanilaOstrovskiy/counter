@@ -17,7 +17,7 @@ const Settings = () => {
                 </div>
             </div>
             <div className={counter.counterButtons}>
-                <SuperButton/>
+                <SuperButton value={"set"}/>
             </div>
         </div>
     );
