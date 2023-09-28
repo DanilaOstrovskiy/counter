@@ -1,0 +1,39 @@
+.settingsTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: inherit;
+    align-items: center;
+    color:white;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+
+.settingsTitle input{
+    display: flex;
+    border-radius: 10px;
+    border: none;
+    outline: #0066ff;
+    min-width: 140px;
+    font-size: 50px;
+    text-align: center;
+
+
+}
+
+.settingsDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    align-items:inherit;
+    min-height: 370px;
+    border: none;
+    border-radius: 10px;
+    margin: 0px 20px 20px 20px;
+    background-color: #343333;
+
+}
+
+
+
