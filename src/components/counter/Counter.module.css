@@ -28,7 +28,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0px 20px 20px 20px;
     background-color: #343333;
     color: white;
-    font-size: 120px;
+    font-size: 70px;
 }
 
 .counterButtons {
@@ -40,4 +40,42 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 10px;
     margin: 10px 20px 0px 20px;
     background-color: #343333;
+}
+
+.value {
+    font-family: 'Roboto';
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.maxInc {
+    font-family: 'Roboto';
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 150px;
+    color: red;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+}
+
+.errorText {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    color: red;
 }

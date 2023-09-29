@@ -1,3 +1,16 @@
+.settingsDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    align-items:inherit;
+    min-height: 370px;
+    border: none;
+    border-radius: 10px;
+    margin: 0 20px 20px 20px;
+    background-color: #343333;
+}
+
 .settingsTitle {
     display: flex;
     flex-direction: row;
@@ -8,32 +21,36 @@
     font-weight: bold;
 }
 
-
-.settingsTitle input{
+.settingsTitle input {
     display: flex;
     border-radius: 10px;
     border: none;
-    outline: #0066ff;
     min-width: 140px;
     font-size: 50px;
     text-align: center;
-
-
 }
 
-.settingsDisplay {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-    align-items:inherit;
-    min-height: 370px;
-    border: none;
-    border-radius: 10px;
-    margin: 0px 20px 20px 20px;
-    background-color: #343333;
-
+.settingsTitle input:focus {
+    outline: none;
 }
+
+.inputDisplay {
+    font-family: 'Roboto';
+    font-size: 12px;
+    width: 100px;
+    padding: 5px;
+}
+
+.inputDisplayFire {
+    background-color: #fcdbe1;
+}
+
+.inputFire {
+    border: red;
+}
+
+
+
 
 
 

@@ -1,11 +1,12 @@
 .universalButton {
+    font-family: 'Roboto';
     min-height:130px;
     min-width:190px;
     color:#2A2C36;
     border:none;
     border-radius: 10px;
     background-color: white;
-    font-size: 24pt;
+    font-size: 45pt;
     font-weight:bold;
 }
 
