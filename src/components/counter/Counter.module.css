@@ -44,7 +44,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .value {
-    font-family: 'Roboto';
     font-size: 120px;
     display: flex;
     align-items: center;
@@ -53,7 +52,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .maxInc {
-    font-family: 'Roboto';
     font-size: 120px;
     display: flex;
     align-items: center;
