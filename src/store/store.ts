@@ -1,15 +1,13 @@
 import {combineReducers, createStore} from "redux";
-import {settingsReducer} from "./settings-reducer";
 import {counterReducer} from "./counter-reducer";
 
 
-const rootReducer = combineReducers({
-    counter: counterReducer,
-    settings: settingsReducer
+const rootReducers = combineReducers({
+    counter: counterReducer
 });
 
-
-export const store = createStore(rootReducer);
+export type AllStateType = ReturnType<typeof rootReducers>
+export const store = createStore(rootReducers);
 
 
 

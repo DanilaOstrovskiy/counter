@@ -1,14 +1,121 @@
+export enum ACTIONS_TYPE {
+    SETTING = 'SETTING',
+    INCREMENT = 'INCREMENT',
+    RESET = 'RESET',
+    CHANGE_START_VALUE = 'CHANGE_START_VALUE',
+    CHANGE_MAX_VALUE = 'CHANGE_MAX_VALUE',
+    CHANGE_START_VALUE_WITH_STATUS = 'CHANGE_START_VALUE_WITH_STATUS',
+    CHANGE_MAX_VALUE_WITH_STATUS = 'CHANGE_MAX_VALUE_WITH_STATUS',
+    CHANGE_ACTIVE_STATUS_MIN = 'CHANGE_ACTIVE_STATUS_MIN',
+    CHANGE_ACTIVE_STATUS_MAX = 'CHANGE_ACTIVE_STATUS_MAX',
+}
+
 const initialState = {
+    value: 0,
+    activeMinValue: true,
+    activeMaxValue: true,
     startValue: 0,
-    maxValue: 5,
-    count:1,
-    startError: false,
-    maxError: false,
-    isSet: true
+    maximumValue: 1,
 }
 
-export const counterReducer = (state = initialState ) => {
+export type InitialStateType = typeof initialState
 
-    return state;
+type ActionsType =
+    | ReturnType<typeof actionsCreators.SettingAC>
+    | ReturnType<typeof actionsCreators.IncrementAC>
+    | ReturnType<typeof actionsCreators.ResetAC>
+    | ReturnType<typeof actionsCreators.ChangeMaxValue>
+    | ReturnType<typeof actionsCreators.ChangeStartValue>
+    | ReturnType<typeof actionsCreators.ChangeMaxValueWithStatus>
+    | ReturnType<typeof actionsCreators.ChangeStartValueWithStatus>
+    | ReturnType<typeof actionsCreators.ChangeActiveStatusMin>
+    | ReturnType<typeof actionsCreators.ChangeActiveStatusMax>
 
+
+export const counterReducer = (state: InitialStateType = initialState, action: ActionsType) => {
+    switch (action.type) {
+        case ACTIONS_TYPE.SETTING:
+            let copyState = {...state}
+            localStorage.setItem('max', copyState.maximumValue.toString());
+            localStorage.setItem('min', copyState.startValue.toString());
+            copyState.value = action.value
+            copyState.activeMinValue = false
+            copyState.activeMaxValue = false
+            return copyState
+
+        case ACTIONS_TYPE.INCREMENT:
+            return {
+                ...state,
+                value: action.value + 1,
+            }
+
+        case ACTIONS_TYPE.RESET:
+            return {
+                ...state,
+                value: 0,
+            }
+
+        case ACTIONS_TYPE.CHANGE_START_VALUE:
+            return {
+                ...state,
+                startValue: action.value
+            }
+
+        case ACTIONS_TYPE.CHANGE_START_VALUE_WITH_STATUS:
+            return {
+                ...state,
+                activeMinValue: action.status,
+                startValue: action.value,
+            }
+
+        case ACTIONS_TYPE.CHANGE_MAX_VALUE:
+            return {
+                ...state,
+                maximumValue: action.value
+            }
+
+        case ACTIONS_TYPE.CHANGE_MAX_VALUE_WITH_STATUS:
+            return {
+                ...state,
+                activeMaxValue: action.status,
+                maximumValue: action.value
+            }
+
+        case ACTIONS_TYPE.CHANGE_ACTIVE_STATUS_MIN:
+            return {
+                ...state,
+                activeMinValue: action.status,
+            }
+
+        case ACTIONS_TYPE.CHANGE_ACTIVE_STATUS_MAX:
+            return {
+                ...state,
+                activeMaxValue: action.status,
+            }
+
+        default:
+            return state
+    }
 }
+
+export const actionsCreators = {
+    SettingAC: (value: number) => ({type: ACTIONS_TYPE.SETTING, value} as const),
+    IncrementAC: (value: number) => ({type: ACTIONS_TYPE.INCREMENT, value} as const),
+    ResetAC: () => ({type: ACTIONS_TYPE.RESET} as const),
+    ChangeMaxValue: (value: number) => ({type: ACTIONS_TYPE.CHANGE_MAX_VALUE, value} as const),
+    ChangeMaxValueWithStatus: (value: number, status: boolean) => ({
+        type: ACTIONS_TYPE.CHANGE_MAX_VALUE_WITH_STATUS,
+        value,
+        status
+    } as const),
+    ChangeStartValue: (value: number) => ({type: ACTIONS_TYPE.CHANGE_START_VALUE, value} as const),
+    ChangeStartValueWithStatus: (value: number, status: boolean) => ({
+        type: ACTIONS_TYPE.CHANGE_START_VALUE_WITH_STATUS,
+        value,
+        status
+    } as const),
+    ChangeActiveStatusMin: (status: boolean) => ({type: ACTIONS_TYPE.CHANGE_ACTIVE_STATUS_MIN, status} as const),
+    ChangeActiveStatusMax: (status: boolean) => ({type: ACTIONS_TYPE.CHANGE_ACTIVE_STATUS_MAX, status} as const)
+}
+
+
