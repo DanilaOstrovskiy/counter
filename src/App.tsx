@@ -1,21 +1,38 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
-import {Route, Routes} from "react-router-dom";
 import Counter from "./components/counter/Counter";
 import Settings from "./components/settings/Settings";
-import {store} from "./store/store";
-import {Provider} from "react-redux";
+import {actionsCreators} from "./store/counter-reducer";
+import {useDispatch} from "react-redux";
+
+export type TextType = `enter value and press 'set'` | `Incorrect value!`
+
+type GetValueType = string | null
+let getMinValue: GetValueType = localStorage.getItem('min')
+let getMaxValue: GetValueType = localStorage.getItem('max')
 
 function App() {
+    let dispatch = useDispatch()
+    const [text, setText] = useState<TextType>(`enter value and press 'set'`)
+    useEffect(() => {
+        if (getMinValue && getMaxValue) {
+            dispatch(actionsCreators.ChangeStartValue(+getMinValue))
+            dispatch(actionsCreators.ChangeMaxValue(+getMaxValue))
+        }
+    }, [])
+
+
     return (
-        <Provider store={store}>
-            <div className="app">
-                <Routes>
-                    <Route path="/" element={<Counter/>}/>
-                    <Route path="settings" element={<Settings/>}/>
-                </Routes>
-            </div>
-        </Provider>
+        <div className="app">
+            <Settings
+                text={text}
+                setText={setText}
+            />
+            <Counter
+                text={text}
+                setText={setText}
+            />
+        </div>
     );
 }
 
