@@ -10,8 +10,8 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 750px;
-    width: 850px;
+    min-height: 350px;
+    min-width: 300px;
     border: none;
     border-radius: 10px;
     background: linear-gradient(180deg, #5B87E6, #5AC6E3);
@@ -22,13 +22,13 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 310px;
+    height: 150px;
     border: none;
     border-radius: 10px;
     margin: 0px 20px 20px 20px;
     background-color: #343333;
     color: white;
-    font-size: 50px;
+    font-size: 25px;
 
 }
 
@@ -37,27 +37,27 @@ input[type="number"]::-webkit-outer-spin-button {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 270px;
+    height: 100px;
     border-radius: 10px;
     margin: 10px 20px 0px 20px;
     background-color: #343333;
 }
 
 .value {
-    font-size: 120px;
+    font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    height: 100px;
 }
 
 .maxInc {
-    font-size: 120px;
+    font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    height: 150px;
+    height: 100px;
     color: red;
 }
 
@@ -66,7 +66,7 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 150px;
+    height: 25px;
 }
 
 .errorText {
@@ -75,6 +75,6 @@ input[type="number"]::-webkit-outer-spin-button {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    height: 150px;
+    height: 25px;
     color: red;
 }

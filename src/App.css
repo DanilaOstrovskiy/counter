@@ -5,8 +5,9 @@ body {
 .app {
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
+  justify-content:center;
   text-align: center;
   align-items: center;
   height: 100vh;
+  gap:45px;
 }
