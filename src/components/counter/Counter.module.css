@@ -44,7 +44,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .value {
-    font-size: 25px;
+    font-size: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .maxInc {
-    font-size: 25px;
+    font-size: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
